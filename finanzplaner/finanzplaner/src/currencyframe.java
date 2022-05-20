@@ -28,7 +28,11 @@ JComboBox selectBox = new JComboBox(currencies);
 
         
         JFrame cf = new JFrame();
-        //this.setSize(100, 100);
+        Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
+        int height = screensize.height;
+        int width = screensize.width;
+        this.setSize((int) Math.ceil(height/1.5),(int) Math.ceil(width/1.5));
+
         this.setTitle(Title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setBackground(Color.WHITE);
@@ -61,7 +65,7 @@ JComboBox selectBox = new JComboBox(currencies);
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==selectBox) {
-            System.out.println(selectBox.getSelectedItem());
+            String currency =(String) selectBox.getSelectedItem();            
         }
     }
 }
